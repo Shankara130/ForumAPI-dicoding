@@ -12,13 +12,16 @@ exports.up = pgm => {
             type: 'TEXT',
             notNull: true,
         },
-        owner: {
+        user_id: {
             type: 'TEXT',
             notNull: true,
         },
-    })
+    });
+
+    pgm.addConstraint('threads', 'fk_threads.user_id_users.id', 'FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE');
 };
 
 exports.down = pgm => {
+    pgm.dropConstraint('threads', 'fk_threads.user_id_users.id');
     pgm.dropTable('threads');
 };

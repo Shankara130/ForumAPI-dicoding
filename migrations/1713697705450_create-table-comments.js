@@ -12,12 +12,16 @@ exports.up = pgm => {
             type: 'TEXT',
             notNull: true,
         },
-        owner: {
+        user_id: {
             type: 'TEXT',
             notNull: true,
         },
         thread_id: {
             type: 'VARCHAR(50)',
+            notNull: true,
+        },
+        is_deleted: {
+            type: 'BOOLEAN',
             notNull: true,
         },
     })
