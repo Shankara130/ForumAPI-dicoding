@@ -12,6 +12,14 @@ exports.up = pgm => {
             type: 'TEXT',
             notNull: true,
         },
+        body: {
+            type: 'TEXT',
+            notNull: true,
+        },
+        created_at: {
+            type: 'TIMESTAMP',
+            notNull: true,
+        },
         user_id: {
             type: 'TEXT',
             notNull: true,
